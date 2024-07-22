@@ -8,8 +8,7 @@ import {
 	PluginSettingTab,
 	Setting,
 } from "obsidian";
-import TestWorker from "testthing.worker";
-import sqlite3InitModule, { Sqlite3Static } from "@sqlite.org/sqlite-wasm";
+import TestWorker from "sqlite3.worker";
 import { sqlite3Worker1Promiser } from "@sqlite.org/sqlite-wasm";
 
 // Remember to rename these classes and interfaces!

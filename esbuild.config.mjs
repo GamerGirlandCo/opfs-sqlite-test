@@ -17,7 +17,7 @@ async function build(prod) {
 					},
 					target: "es2020",
 					format: "cjs",
-			sourcemap: prod ? false : "inline",
+					sourcemap: prod ? false : "inline",
 				}),
 			],
 			entryPoints: ["src/main.ts"],

@@ -14,6 +14,6 @@ onmessage = async (event) => {
 			initialCapacity: 65536,
 		});
 		sqlite3.initWorker1API();
-		console.log(sqlite3.capi.sqlite3_vfs_find("opfs"));
+		console.log(sqlite3.capi.sqlite3_vfs_find("opfs-sah"));
 	}
 };
