@@ -18,8 +18,9 @@ export default class MyPlugin extends Plugin {
 		await this.loadSettings();
 		console.log(import.meta);
 
-		// This creates an icon in the left ribbon.
 		await this.initSqlite();
+		await this.start();
+		(window as any).sqlite3Promiser = this.promiser;
 	}
 
 	onunload() {
@@ -62,7 +63,6 @@ export default class MyPlugin extends Plugin {
 				worker: () => w,
 			});
 		});
-		await this.start();
 	}
 
 	async start() {
