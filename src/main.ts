@@ -67,7 +67,7 @@ export default class MyPlugin extends Plugin {
 
 	async start() {
 		let openRes = await this.promiser("open", {
-			filename: "/test.sqlite2",
+			filename: "/managed-sah/test.sqlite3",
 			vfs: "opfs-sahpool",
 		});
 		const { dbId } = openRes;
