@@ -1,28 +1,16 @@
 import {
-	App,
-	Editor,
-	MarkdownView,
-	Modal,
 	Notice,
 	Plugin,
-	PluginSettingTab,
-	Setting,
 } from "obsidian";
 import TestWorker from "sqlite3.worker";
 import { sqlite3Worker1Promiser } from "@sqlite.org/sqlite-wasm";
 
 // Remember to rename these classes and interfaces!
 
-interface MyPluginSettings {
-	mySetting: string;
-}
 
-const DEFAULT_SETTINGS: MyPluginSettings = {
-	mySetting: "default",
-};
 
 export default class MyPlugin extends Plugin {
-	settings: MyPluginSettings;
+	settings: any;
 	private worker: Worker;
 	private promiser: (...args: any[]) => any;
 
@@ -39,7 +27,7 @@ export default class MyPlugin extends Plugin {
 	}
 
 	async loadSettings() {
-		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+		this.settings = Object.assign({}, await this.loadData());
 	}
 
 	async saveSettings() {
@@ -114,22 +102,5 @@ export default class MyPlugin extends Plugin {
 		} finally {
 			await this.promiser("close", { dbId });
 		}
-		// db = new sqlite3.oo1.DB("/test.sqlite3", "ct");
-		/* if (db) {
-			try {
-				console.log("Creating a table...");
-				db.exec();
-				console.log("Insert some data using exec()...");
-				for (let i = 20; i <= 25; ++i) {
-					db.exec({
-						sql: "INSERT INTO t(a,b) VALUES (?,?)",
-						bind: [i, i * 2],
-					});
-				}
-				db.exec();
-			} finally {
-				db.close();
-			}
-		} */
 	}
 }
