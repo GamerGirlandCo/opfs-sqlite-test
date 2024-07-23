@@ -725,11 +725,6 @@ slash@^3.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
   integrity sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==
 
-sqlite-wasm-esm@^0.0.30:
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/sqlite-wasm-esm/-/sqlite-wasm-esm-0.0.30.tgz#b25492775bc9f26d260d683820787b840b466592"
-  integrity sha512-rLl+STKLfGXyBcpQlH6uEMMh76YXixY3s+qDEMzIiMMsyN7iXLmo4Mk1Su/6GoJFprSWP+cgOCWQsAbLELCEPg==
-
 to-regex-range@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/to-regex-range/-/to-regex-range-5.0.1.tgz#1648c44aae7c8d988a326018ed72f5b4dd0392e4"
