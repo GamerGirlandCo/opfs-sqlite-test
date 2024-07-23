@@ -12,8 +12,9 @@ onmessage = async (event) => {
 		await sqlite3.installOpfsSAHPoolVfs({
 			clearOnInit: false,
 			initialCapacity: 65536,
+			directory: "/var/managed-sah"
 		});
 		sqlite3.initWorker1API();
-		console.log(sqlite3.capi.sqlite3_vfs_find("opfs-sah"));
+		console.log(sqlite3.capi.sqlite3_vfs_find("opfs-sahpool"));
 	}
 };
