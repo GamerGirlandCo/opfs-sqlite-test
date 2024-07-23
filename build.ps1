@@ -10,8 +10,6 @@ $prodFlag = If($prod) {"production"} Else {""}
 node .\esbuild.config.mjs -- $prodFlag
 
 if($LASTEXITCODE -ne 0) {
-	$host.SetShouldExit(1);
-	exit 1;
 }
 
 $pluginName = "sqlite3-opfs-test-plugin"

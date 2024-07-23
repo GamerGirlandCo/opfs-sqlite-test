@@ -9,7 +9,7 @@ import {
 	Setting,
 } from "obsidian";
 import TestWorker from "sqlite3.worker";
-import { sqlite3Worker1Promiser } from "@sqlite.org/sqlite-wasm";
+import { sqlite3Worker1Promiser } from "@btfash/sqlite-wasm/index.mjs";
 
 // Remember to rename these classes and interfaces!
 
@@ -61,10 +61,11 @@ export default class MyPlugin extends Plugin {
 		let w = this.worker;
 		this.worker.postMessage({
 			type: "init",
+			root: this.locateFile("", ""),
 			path: this.locateFile("sqlite3.wasm", ""),
 		});
 		this.promiser = await new Promise<typeof this.promiser>((resolve) => {
-			const _promiser = sqlite3Worker1Promiser({
+			const _promiser = (sqlite3Worker1Promiser as (...args: any[]) => any)({
 				print: this.printNotice,
 				printErr: console.error,
 				locateFile: this.locateFile.bind(this),
@@ -79,8 +80,8 @@ export default class MyPlugin extends Plugin {
 
 	async start() {
 		let openRes = await this.promiser("open", {
-			filename: "/test.sqlite2",
-			vfs: "opfs-sahpool",
+			filename: "/test.sqlite3",
+			vfs: "opfs",
 		});
 		const { dbId } = openRes;
 		console.log(openRes);
